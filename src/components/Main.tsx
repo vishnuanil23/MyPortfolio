@@ -83,13 +83,13 @@ function Main() {
 
             {/* Social */}
             <div className="hero-socials">
-              <a href="https://github.com/vishnuanil23" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <a href="https://github.com/vi*****" target="_blank" rel="noreferrer" aria-label="GitHub">
                 <GitHubIcon />
               </a>
-              <a href="https://www.linkedin.com/in/vishnu-ma/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/vi*****" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                 <LinkedInIcon />
               </a>
-              <a href="mailto:vishnu@example.com" aria-label="Email">
+              <a href="mailto:vi*****@gmail.com" aria-label="Email">
                 <EmailIcon />
               </a>
             </div>

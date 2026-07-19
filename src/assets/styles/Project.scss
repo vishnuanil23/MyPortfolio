@@ -116,6 +116,46 @@
   margin-bottom: 1.2rem;
 }
 
+/* Key Contributions */
+.project-contributions {
+  margin-bottom: 1.2rem;
+
+  .contributions-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-subtle);
+    margin-bottom: 0.5rem;
+  }
+
+  .contributions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    li {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      padding-left: 1.1em;
+      position: relative;
+
+      &::before {
+        content: '›';
+        position: absolute;
+        left: 0;
+        color: var(--project-accent, #7c3aed);
+        font-weight: 700;
+      }
+    }
+  }
+}
+
 /* Highlights */
 .project-highlights {
   display: flex;

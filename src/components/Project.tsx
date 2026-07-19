@@ -19,7 +19,7 @@ const projects = [
     role: 'Technical Lead',
     description:
       'Developed an enterprise Lead Retrieval System (LRS) for exhibitions and trade shows that enables exhibitors to instantly capture qualified leads by scanning attendee QR codes. The platform simplifies lead collection, eliminates manual data entry, and provides exhibitors with real-time access to visitor information for post-event sales and marketing follow-ups.',
-    tech: ['Flutter', 'Flutter Web', 'Java', 'JavaScript', 'PostgreSQL', 'REST APIs', 'RFID', 'QR Code'],
+    tech: ['Flutter', 'Flutter Web', 'Java', 'JavaScript', 'PostgreSQL', 'REST APIs', 'RFID', 'QR Code', 'JWT', 'Firebase Push Notifications', 'TDD / BDD, Unit, Widget & Integration Testing'],
     highlights: ['Lead Generation', 'QR Code Scanning', 'RFID Integration', 'Exhibition Management', 'Technical Leadership', 'Flutter Web'],
     playStore: 'https://play.google.com/store/apps/details?id=com.compusystems.lrsattendee&pcampaignid=web_share',
     appStore: 'https://apps.apple.com/in/app/m3-expo-wallet/id6443723858',
@@ -34,7 +34,7 @@ const projects = [
     role: 'Team Lead',
     description:
       'Developed an enterprise AI-powered product content management platform for GS1 Canada that enables businesses to upload product packaging images and automatically generate structured product information. The platform uses AI to identify product details, generate nutrition facts, create multiple product asset variations, allow manual review and editing, and publish validated GS1-compliant barcode information through a secure approval workflow.',
-    tech: ['Flutter', 'Dart', 'OpenAI', 'REST APIs', 'GS1 APIs', 'Cloud Storage'],
+    tech: ['Flutter', 'Dart', 'OpenAI', 'REST APIs', 'GS1 APIs', 'Cloud Storage', 'JWT', 'TDD / BDD, Unit, Widget & Integration Testing'],
     highlights: ['AI Product Recognition', 'Nutrition Facts Generation', 'Product Asset Generation', 'Approval Workflow'],
     playStore: null,
     appStore: null,
@@ -49,7 +49,7 @@ const projects = [
     role: 'Senior Software Developer',
     description:
       'Developed an enterprise logistics and freight management platform designed to streamline warehouse operations, shipment tracking, freight identification, and dispatch management. The solution runs on rugged Android-based POS devices, enabling warehouse operators to scan, verify, and dispatch shipments efficiently through real-time barcode scanning and backend synchronization.',
-    tech: ['Android', 'Kotlin', '.NET', 'Microsoft SQL Server', 'REST APIs', 'POS Device Integration', 'Barcode Scanning'],
+    tech: ['Android', 'Kotlin', '.NET', 'Microsoft SQL Server', 'REST APIs', 'POS Device Integration', 'Barcode Scanning', 'Firebase Push Notifications', 'TDD / BDD, Unit, Widget & Integration Testing'],
     highlights: ['Freight Management', 'Warehouse Operations', 'POS Device', 'Barcode Scanning', 'Shipment Dispatch', 'Enterprise Logistics'],
     playStore: null,
     appStore: null,
@@ -92,7 +92,7 @@ const projects = [
     role: 'Mobile Engineer',
     description:
       'A secure enterprise digital banking application developed for multiple Cooperative Banks in India and Africa. Supports savings, loans, shares, QR payments, and IMPS/NEFT transfers. Engineered with device binding, SSL pinning, and data encryption.',
-    tech: ['Android', 'Java', 'MVC', 'ASP.NET', 'REST APIs', 'Microsoft SQL Server', 'JSON', 'XML', 'Volley', 'KSOAP', 'IMPS', 'NEFT'],
+    tech: ['Android', 'Java', 'MVC', 'ASP.NET', 'REST APIs', 'Microsoft SQL Server', 'JSON', 'XML', 'Volley', 'KSOAP', 'IMPS', 'NEFT', 'Firebase Push Notifications', 'TDD / BDD, Unit, Widget & Integration Testing'],
     highlights: ['Digital Banking', 'QR Payments', 'Enterprise Security', 'ASP.NET APIs', 'Microsoft SQL Server', 'India & Africa', 'App Store & Google Play'],
     playStore: 'https://play.google.com/store/apps/details?id=com.safesoftware.passbook.perumannascb',
     appStore: 'https://apps.apple.com/in/app/pscb-perumanna/id6761455945',

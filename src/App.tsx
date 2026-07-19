@@ -4,6 +4,7 @@ import {
   About,
   Expertise,
   Timeline,
+  Education,
   Project,
   Leadership,
   Achievements,
@@ -33,6 +34,7 @@ function App() {
       <FadeIn transitionDuration={700}>
         <Main />
         <About />
+        <Education />
         <Expertise />
         <Timeline />
         <Project />
