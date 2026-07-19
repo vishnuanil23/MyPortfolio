@@ -25,7 +25,7 @@ function Footer() {
             Building mobile experiences that matter.
           </p>
           <div className="footer-socials">
-            <a href="https://github.com/vishnuanil" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <a href="https://github.com/vishnuanil23" target="_blank" rel="noreferrer" aria-label="GitHub">
               <GitHubIcon />
             </a>
             <a href="https://www.linkedin.com/in/vishnu-ma/" target="_blank" rel="noreferrer" aria-label="LinkedIn">

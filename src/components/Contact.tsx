@@ -12,37 +12,34 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const contactLinks = [
   {
+    id: 'email',
     icon: <EmailIcon />,
     label: 'Email',
-    value: 'vishnu@example.com',
-    href: 'mailto:vishnu@example.com',
+    value: 'vi*****@gmail.com', // Masked email
+    href: 'mailto:vishnuanil23@gmail.com',
     color: '#7c3aed',
   },
   {
+    id: 'linkedin',
     icon: <LinkedInIcon />,
     label: 'LinkedIn',
-    value: 'linkedin.com/in/vishnu-ma',
+    value: 'in/vishnu-ma', // Shortened
     href: 'https://www.linkedin.com/in/vishnu-ma/',
     color: '#0077b5',
   },
   {
+    id: 'github',
     icon: <GitHubIcon />,
     label: 'GitHub',
-    value: 'github.com/vishnuanil',
-    href: 'https://github.com/vishnuanil',
+    value: 'github/vishnuanil23', // Shortened
+    href: 'https://github.com/vishnuanil23',
     color: '#a78bfa',
   },
   {
-    icon: <PhoneIcon />,
-    label: 'Phone',
-    value: '+91 98XXX XXXXX',
-    href: 'tel:+919800000000',
-    color: '#10b981',
-  },
-  {
+    id: 'location',
     icon: <LocationOnIcon />,
     label: 'Location',
-    value: 'Kochi, Kerala, India',
+    value: 'Kochi, India', // Shortened
     href: '#',
     color: '#f59e0b',
   },
@@ -56,6 +53,7 @@ function Contact() {
   const [emailError, setEmailError] = useState<boolean>(false);
   const [messageError, setMessageError] = useState<boolean>(false);
   const [sent, setSent] = useState<boolean>(false);
+  const [copied, setCopied] = useState<boolean>(false);
   const form = useRef<any>();
   const ref = useRef<HTMLDivElement>(null);
 
@@ -80,6 +78,13 @@ function Contact() {
     }
   };
 
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigator.clipboard.writeText('vishnuanil23@gmail.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div id="contact" ref={ref}>
       <div className="contact-section">
@@ -96,27 +101,33 @@ function Contact() {
           </p>
 
           <div className="contact-links">
-            {contactLinks.map((link, i) => (
-              <a
-                key={i}
-                href={link.href}
-                target={link.href.startsWith('http') ? '_blank' : undefined}
-                rel="noreferrer"
-                className="contact-link-item"
-                style={{ '--link-color': link.color } as React.CSSProperties}
-              >
-                <div
-                  className="contact-link-icon"
-                  style={{ background: `${link.color}15`, color: link.color }}
+            {contactLinks.map((link, i) => {
+              const isEmail = link.id === 'email';
+              return (
+                <a
+                  key={i}
+                  href={isEmail ? '#' : link.href}
+                  onClick={isEmail ? handleEmailClick : undefined}
+                  target={!isEmail && link.href.startsWith('http') ? '_blank' : undefined}
+                  rel="noreferrer"
+                  className="contact-link-item"
+                  style={{ '--link-color': link.color } as React.CSSProperties}
                 >
-                  {link.icon}
-                </div>
-                <div className="contact-link-text">
-                  <span className="contact-link-label">{link.label}</span>
-                  <span className="contact-link-value">{link.value}</span>
-                </div>
-              </a>
-            ))}
+                  <div
+                    className="contact-link-icon"
+                    style={{ background: `${link.color}15`, color: link.color }}
+                  >
+                    {link.icon}
+                  </div>
+                  <div className="contact-link-text">
+                    <span className="contact-link-label">{link.label}</span>
+                    <span className="contact-link-value">
+                      {isEmail && copied ? 'Copied to clipboard!' : link.value}
+                    </span>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
 
