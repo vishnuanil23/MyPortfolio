@@ -15,7 +15,7 @@ const leadershipCards = [
     color: '#7c3aed',
     title: 'Team Management',
     description:
-      'Led and managed cross-functional teams of 12+ developers, designers, and QA engineers. Fostered a culture of ownership, accountability, and continuous improvement.',
+      'Led and managed cross-functional teams of 15+ developers, designers, and QA engineers. Fostered a culture of ownership, accountability, and continuous improvement.',
   },
   {
     icon: <SchoolIcon />,

@@ -11,7 +11,7 @@ const achievements = [
 
 const milestones = [
   `${yearsOfExperience}+ years of mobile development across Android, iOS, and Flutter (since July 2015)`,
-  'Led teams of 12+ engineers across multiple concurrent projects',
+  'Led teams of 15+ engineers across multiple concurrent projects',
   'Successfully delivered multiple production apps to Google Play and Apple App Store',
   'Implemented Clean Architecture in enterprise-grade mobile applications',
   'Built offline-first mobile solutions with real-time sync capabilities',

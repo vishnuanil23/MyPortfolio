@@ -62,12 +62,12 @@ function About() {
               </div>
               <div className="stat-divider" />
               <div className="stat-item">
-                <span className="stat-number gradient-text">12+</span>
+                <span className="stat-number gradient-text">15+</span>
                 <span className="stat-label">Engineers Led</span>
               </div>
               <div className="stat-divider" />
               <div className="stat-item">
-                <span className="stat-number gradient-text">15+</span>
+                <span className="stat-number gradient-text">30+</span>
                 <span className="stat-label">Apps Delivered</span>
               </div>
             </div>

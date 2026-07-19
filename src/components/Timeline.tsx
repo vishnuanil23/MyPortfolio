@@ -15,7 +15,7 @@ const experiences = [
     date: '2022 — Present',
     type: 'current',
     responsibilities: [
-      'Led a cross-functional team of 12+ developers across multiple projects',
+      'Led a cross-functional team of 15+ developers across multiple projects',
       'Drove architectural decisions including Flutter migration from native Android',
       'Conducted sprint planning, code reviews, and technical interviews',
       'Managed client discussions, requirement gathering, and stakeholder communication',
