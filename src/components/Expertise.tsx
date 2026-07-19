@@ -1,91 +1,101 @@
-import React from "react";
-import '@fortawesome/free-regular-svg-icons'
+import React, { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
-import Chip from '@mui/material/Chip';
+import { faMobileAlt, faCode, faCubes, faTools, faUsers } from '@fortawesome/free-solid-svg-icons';
 import '../assets/styles/Expertise.scss';
 
-const labelsFirst = [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "SASS",
-    "Flask",
-    "Python",
-    "SQL",
-    "PostgreSQL",
-    "Postman"
-];
-
-const labelsSecond = [
-    "Git",
-    "GitHub Actions",
-    "Docker",
-    "AWS",
-    "Azure",
-    "Linux",
-    "Snowflake",
-    "Pandas",
-    "Selenium",
-];
-
-const labelsThird = [
-    "OpenAI",
-    "Groq",
-    "LangChain",
-    "Qdrant",
-    "Hugging Face",
-    "LlamaIndex",
-    "Streamlit",
+const skillGroups = [
+  {
+    icon: faMobileAlt,
+    title: 'Mobile',
+    color: '#7c3aed',
+    skills: ['Flutter', 'Android', 'iOS', 'React Native'],
+  },
+  {
+    icon: faCode,
+    title: 'Languages',
+    color: '#06b6d4',
+    skills: ['Dart', 'Swift', 'Kotlin', 'Java', 'Objective-C'],
+  },
+  {
+    icon: faCubes,
+    title: 'Architecture',
+    color: '#a78bfa',
+    skills: ['MVVM', 'Clean Architecture', 'BLoC', 'Provider', 'Riverpod', 'REST APIs'],
+  },
+  {
+    icon: faTools,
+    title: 'Tools',
+    color: '#f59e0b',
+    skills: ['Git', 'GitHub', 'Jira', 'Firebase', 'Postman', 'Android Studio', 'Xcode', 'VS Code'],
+  },
+  {
+    icon: faUsers,
+    title: 'Leadership',
+    color: '#10b981',
+    skills: ['Agile', 'Sprint Planning', 'Mentoring', 'Code Reviews', 'Requirement Analysis', 'Stakeholder Communication', 'Project Estimation'],
+  },
 ];
 
 function Expertise() {
-    return (
-    <div className="container" id="expertise">
-        <div className="skills-container">
-            <h1>Expertise</h1>
-            <div className="skills-grid">
-                <div className="skill">
-                    <FontAwesomeIcon icon={faReact} size="3x"/>
-                    <h3>Full Stack Web Development</h3>
-                    <p>I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsFirst.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
+  const ref = useRef<HTMLDivElement>(null);
 
-                <div className="skill">
-                    <FontAwesomeIcon icon={faDocker} size="3x"/>
-                    <h3>DevOps & Automation</h3>
-                    <p>Once the application is built, I help clients set up DevOps testing, CI/CD pipelines, and deployment automation to support the successful Go-Live.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsSecond.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
-
-                <div className="skill">
-                    <FontAwesomeIcon icon={faPython} size="3x"/>
-                    <h3>GenAI & LLM</h3>
-                    <p>Stay relevant in the market by leveraging the latest AI models in your projects. I have professional experience building enterprise grade GenAI-enabled solutions to empower intelligent decision making.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsThird.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.1 }
     );
+    ref.current?.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className="container" id="expertise" ref={ref}>
+      <div className="skills-section">
+        <div className="section-header reveal">
+          <span className="section-label">Skills & Expertise</span>
+          <h2 className="section-title">
+            Technologies I work with,<br />
+            <span className="gradient-text">tools I master</span>
+          </h2>
+          <p className="section-subtitle">
+            Five years deep into mobile, eight years strong — here's the stack I use every day.
+          </p>
+        </div>
+
+        <div className="skills-group-grid">
+          {skillGroups.map((group, i) => (
+            <div
+              key={i}
+              className={`skill-group-card glass-card reveal reveal-delay-${i + 1}`}
+            >
+              <div className="skill-group-header">
+                <div
+                  className="skill-group-icon"
+                  style={{ background: `${group.color}18`, border: `1px solid ${group.color}30` }}
+                >
+                  <FontAwesomeIcon icon={group.icon} style={{ color: group.color }} />
+                </div>
+                <h3 className="skill-group-title" style={{ color: group.color }}>{group.title}</h3>
+              </div>
+              <div className="skill-group-chips">
+                {group.skills.map((skill, j) => (
+                  <span
+                    key={j}
+                    className="skill-chip-new"
+                    style={{
+                      '--chip-color': group.color,
+                    } as React.CSSProperties}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Expertise;

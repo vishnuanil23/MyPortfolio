@@ -1,38 +1,98 @@
-.vertical-timeline span {
-    color: white;
-    font-family: 'Courier Prime', monospace;
+.timeline-section {
+  padding: var(--section-padding);
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.vertical-timeline p {
-    color: rgb(39, 40, 34);
+/* Override vertical timeline colors */
+.vertical-timeline::before {
+  background: linear-gradient(to bottom, var(--color-primary), rgba(124, 58, 237, 0.1)) !important;
+  width: 2px !important;
 }
 
-.vertical-timeline-element p {
-    color: rgb(39, 40, 34);
+.vertical-timeline-element-content {
+  h3, h4, p, li {
+    color: var(--color-text) !important;
+  }
 }
 
-.vertical-timeline-element h3 {
-    color: rgb(39, 40, 34);
+.timeline-title {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: var(--color-text) !important;
+  margin-bottom: 0.25rem !important;
+  margin: 0 0 4px 0 !important;
 }
 
-.vertical-timeline-element h4 {
-    color: rgb(39, 40, 34);
+.timeline-company {
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  color: #a78bfa !important;
+  margin-bottom: 1rem !important;
+  margin: 0 0 14px 0 !important;
 }
 
-.vertical-timeline-element span {
-    color: rgb(39, 40, 34);
+.timeline-location {
+  color: var(--color-text-muted) !important;
+  font-weight: 400 !important;
+  margin-left: 4px;
 }
 
-.vertical-timeline-element .vertical-timeline-element-date {
-    color: white;
-}
+.timeline-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 
-.svg-inline--fa {
-    color: white;
-}
+  li {
+    font-size: 0.88rem !important;
+    color: var(--color-text-muted) !important;
+    line-height: 1.6 !important;
+    list-style-type: none;
+    padding-left: 0;
+    position: relative;
 
-@media screen and (max-width: 1170px) {
-    .vertical-timeline-element .vertical-timeline-element-date {
-        color: rgb(39, 40, 34);
+    &::before {
+      content: '▹';
+      color: var(--color-primary);
+      position: absolute;
+      left: -1.2rem;
     }
+  }
+}
+
+.timeline-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  background: rgba(124, 58, 237, 0.15);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #a78bfa;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Current role highlight */
+.vt-current .vertical-timeline-element-content {
+  border-color: rgba(124, 58, 237, 0.25) !important;
+}
+
+/* Date text */
+.vertical-timeline-element-date {
+  color: var(--color-text-muted) !important;
+  font-size: 0.82rem !important;
+  font-weight: 500 !important;
+  font-family: 'Fira Code', monospace !important;
+}
+
+@media (max-width: 768px) {
+  .timeline-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }

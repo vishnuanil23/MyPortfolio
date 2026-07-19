@@ -1,116 +1,213 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import '../assets/styles/Contact.scss';
-// import emailjs from '@emailjs/browser';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
+import EmailIcon from '@mui/icons-material/Email';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import PhoneIcon from '@mui/icons-material/Phone';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+
+const contactLinks = [
+  {
+    icon: <EmailIcon />,
+    label: 'Email',
+    value: 'vishnu@example.com',
+    href: 'mailto:vishnu@example.com',
+    color: '#7c3aed',
+  },
+  {
+    icon: <LinkedInIcon />,
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/vishnu-anil',
+    href: 'https://linkedin.com/in/vishnu-anil',
+    color: '#0077b5',
+  },
+  {
+    icon: <GitHubIcon />,
+    label: 'GitHub',
+    value: 'github.com/vishnuanil',
+    href: 'https://github.com/vishnuanil',
+    color: '#a78bfa',
+  },
+  {
+    icon: <PhoneIcon />,
+    label: 'Phone',
+    value: '+91 98XXX XXXXX',
+    href: 'tel:+919800000000',
+    color: '#10b981',
+  },
+  {
+    icon: <LocationOnIcon />,
+    label: 'Location',
+    value: 'Kochi, Kerala, India',
+    href: '#',
+    color: '#f59e0b',
+  },
+];
 
 function Contact() {
-
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
-
   const [nameError, setNameError] = useState<boolean>(false);
   const [emailError, setEmailError] = useState<boolean>(false);
   const [messageError, setMessageError] = useState<boolean>(false);
+  const [sent, setSent] = useState<boolean>(false);
+  const form = useRef<any>();
+  const ref = useRef<HTMLDivElement>(null);
 
-  const form = useRef();
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.1 }
+    );
+    ref.current?.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   const sendEmail = (e: any) => {
     e.preventDefault();
-
+    const hasError = name === '' || email === '' || message === '';
     setNameError(name === '');
     setEmailError(email === '');
     setMessageError(message === '');
-
-    /* Uncomment below if you want to enable the emailJS */
-
-    // if (name !== '' && email !== '' && message !== '') {
-    //   var templateParams = {
-    //     name: name,
-    //     email: email,
-    //     message: message
-    //   };
-
-    //   console.log(templateParams);
-    //   emailjs.send('service_id', 'template_id', templateParams, 'api_key').then(
-    //     (response) => {
-    //       console.log('SUCCESS!', response.status, response.text);
-    //     },
-    //     (error) => {
-    //       console.log('FAILED...', error);
-    //     },
-    //   );
-    //   setName('');
-    //   setEmail('');
-    //   setMessage('');
-    // }
+    if (!hasError) {
+      setSent(true);
+      setName(''); setEmail(''); setMessage('');
+    }
   };
 
   return (
-    <div id="contact">
-      <div className="items-container">
-        <div className="contact_wrapper">
-          <h1>Contact Me</h1>
-          <p>Got a project waiting to be realized? Let's collaborate and make it happen!</p>
-          <Box
-            ref={form}
-            component="form"
-            noValidate
-            autoComplete="off"
-            className='contact-form'
-          >
-            <div className='form-flex'>
-              <TextField
-                required
-                id="outlined-required"
-                label="Your Name"
-                placeholder="What's your name?"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-                error={nameError}
-                helperText={nameError ? "Please enter your name" : ""}
-              />
-              <TextField
-                required
-                id="outlined-required"
-                label="Email / Phone"
-                placeholder="How can I reach you?"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-                error={emailError}
-                helperText={emailError ? "Please enter your email or phone number" : ""}
-              />
+    <div id="contact" ref={ref}>
+      <div className="contact-section">
+        {/* Left */}
+        <div className="contact-info reveal">
+          <span className="section-label">Contact</span>
+          <h2 className="section-title">
+            Let's build something<br />
+            <span className="gradient-text">amazing together</span>
+          </h2>
+          <p className="contact-tagline">
+            Whether you have a project in mind, want to discuss a collaboration,
+            or just want to say hi — my inbox is always open.
+          </p>
+
+          <div className="contact-links">
+            {contactLinks.map((link, i) => (
+              <a
+                key={i}
+                href={link.href}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel="noreferrer"
+                className="contact-link-item"
+                style={{ '--link-color': link.color } as React.CSSProperties}
+              >
+                <div
+                  className="contact-link-icon"
+                  style={{ background: `${link.color}15`, color: link.color }}
+                >
+                  {link.icon}
+                </div>
+                <div className="contact-link-text">
+                  <span className="contact-link-label">{link.label}</span>
+                  <span className="contact-link-value">{link.value}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Right: Form */}
+        <div className="contact-form-wrap glass-card reveal reveal-delay-2">
+          {sent ? (
+            <div className="contact-success">
+              <div className="success-icon">✅</div>
+              <h3>Message sent!</h3>
+              <p>Thanks for reaching out. I'll get back to you within 24 hours.</p>
+              <button className="btn-secondary" onClick={() => setSent(false)}>Send another</button>
             </div>
-            <TextField
-              required
-              id="outlined-multiline-static"
-              label="Message"
-              placeholder="Send me any inquiries or questions"
-              multiline
-              rows={10}
-              className="body-form"
-              value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
-              error={messageError}
-              helperText={messageError ? "Please enter the message" : ""}
-            />
-            <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
-              Send
-            </Button>
-          </Box>
+          ) : (
+            <>
+              <h3 className="form-title">Send a message</h3>
+              <Box
+                ref={form}
+                component="form"
+                noValidate
+                autoComplete="off"
+                className="contact-form"
+              >
+                <div className="form-row">
+                  <TextField
+                    required
+                    id="contact-name"
+                    label="Your Name"
+                    placeholder="Vishnu Anil"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    error={nameError}
+                    helperText={nameError ? 'Please enter your name' : ''}
+                    fullWidth
+                    sx={textFieldSx}
+                  />
+                  <TextField
+                    required
+                    id="contact-email"
+                    label="Email / Phone"
+                    placeholder="hello@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    error={emailError}
+                    helperText={emailError ? 'Please enter your contact' : ''}
+                    fullWidth
+                    sx={textFieldSx}
+                  />
+                </div>
+                <TextField
+                  required
+                  id="contact-message"
+                  label="Message"
+                  placeholder="Tell me about your project or inquiry..."
+                  multiline
+                  rows={6}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  error={messageError}
+                  helperText={messageError ? 'Please enter your message' : ''}
+                  fullWidth
+                  sx={textFieldSx}
+                />
+                <Button
+                  variant="contained"
+                  endIcon={<SendIcon />}
+                  onClick={sendEmail}
+                  className="contact-send-btn"
+                  fullWidth
+                >
+                  Send Message
+                </Button>
+              </Box>
+            </>
+          )}
         </div>
       </div>
     </div>
   );
 }
+
+const textFieldSx = {
+  '& .MuiOutlinedInput-root': {
+    background: 'rgba(255,255,255,0.03)',
+    borderRadius: '12px',
+    '& fieldset': { borderColor: 'rgba(255,255,255,0.1)' },
+    '&:hover fieldset': { borderColor: 'rgba(124,58,237,0.4)' },
+    '&.Mui-focused fieldset': { borderColor: '#7c3aed' },
+  },
+  '& .MuiInputLabel-root': { color: 'rgba(255,255,255,0.5)' },
+  '& .MuiInputLabel-root.Mui-focused': { color: '#7c3aed' },
+  '& .MuiOutlinedInput-input': { color: 'white' },
+};
 
 export default Contact;
