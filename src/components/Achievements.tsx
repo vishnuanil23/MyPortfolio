@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import '../assets/styles/Achievements.scss';
+import { yearsOfExperience } from '../utils/experience';
 
 const achievements = [
-  { value: 8, suffix: '+', label: 'Years of Experience', description: 'Delivering production mobile applications' },
+  { value: yearsOfExperience, suffix: '+', label: 'Years of Experience', description: 'Delivering production mobile applications since July 2015' },
   { value: 12, suffix: '+', label: 'Engineers Led', description: 'In cross-functional development teams' },
   { value: 15, suffix: '+', label: 'Apps Delivered', description: 'Published to Play Store & App Store' },
   { value: 4, suffix: '', label: 'Countries Deployed', description: 'Across events, fintech, and government sectors' },
 ];
 
 const milestones = [
-  '8+ years of mobile development across Android, iOS, and Flutter',
+  `${yearsOfExperience}+ years of mobile development across Android, iOS, and Flutter (since July 2015)`,
   'Led teams of 12+ engineers across multiple concurrent projects',
   'Successfully delivered multiple production apps to Google Play and Apple App Store',
   'Implemented Clean Architecture in enterprise-grade mobile applications',

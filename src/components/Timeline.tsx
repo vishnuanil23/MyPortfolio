@@ -5,6 +5,7 @@ import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import '../assets/styles/Timeline.scss';
+import { yearsOfExperience } from '../utils/experience';
 
 const experiences = [
   {
@@ -85,7 +86,7 @@ function Timeline() {
             <span className="gradient-text">Techversant</span>
           </h2>
           <p className="section-subtitle">
-            8+ years of growth from engineer to technical leader, building impactful mobile solutions.
+            {yearsOfExperience}+ years of growth from engineer to technical leader, building impactful mobile solutions.
           </p>
         </div>
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import '../assets/styles/About.scss';
+import { yearsOfExperience } from '../utils/experience';
 
 const skills = [
   'Flutter', 'Android', 'iOS', 'React Native',
@@ -41,7 +42,7 @@ function About() {
               <span className="gradient-text">one app at a time</span>
             </h2>
             <p className="about-description reveal reveal-delay-2">
-              I am a <strong>Technical Lead</strong> with <strong>8+ years of experience</strong> building
+              I am a <strong>Technical Lead</strong> with <strong>{yearsOfExperience}+ years of experience</strong> building
               high-quality mobile applications using Flutter, Android, and iOS technologies.
               I have successfully led cross-functional teams, designed scalable architectures,
               conducted code reviews, mentored developers, and delivered enterprise-grade
@@ -56,7 +57,7 @@ function About() {
             {/* Stats row */}
             <div className="about-stats reveal reveal-delay-4">
               <div className="stat-item">
-                <span className="stat-number gradient-text">8+</span>
+                <span className="stat-number gradient-text">{yearsOfExperience}+</span>
                 <span className="stat-label">Years Experience</span>
               </div>
               <div className="stat-divider" />
