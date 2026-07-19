@@ -21,8 +21,8 @@ const contactLinks = [
   {
     icon: <LinkedInIcon />,
     label: 'LinkedIn',
-    value: 'linkedin.com/in/vishnu-anil',
-    href: 'https://linkedin.com/in/vishnu-anil',
+    value: 'linkedin.com/in/vishnu-ma',
+    href: 'https://www.linkedin.com/in/vishnu-ma/',
     color: '#0077b5',
   },
   {

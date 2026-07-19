@@ -28,7 +28,7 @@ function Footer() {
             <a href="https://github.com/vishnuanil" target="_blank" rel="noreferrer" aria-label="GitHub">
               <GitHubIcon />
             </a>
-            <a href="https://linkedin.com/in/vishnu-anil" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/vishnu-ma/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <LinkedInIcon />
             </a>
             <a href="mailto:vishnu@example.com" aria-label="Email">
