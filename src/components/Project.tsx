@@ -4,6 +4,7 @@ import mock02 from '../assets/images/mock02.png';
 import mock03 from '../assets/images/mock03.png';
 import mock04 from '../assets/images/mock04.png';
 import mock05 from '../assets/images/mock05.png';
+import mock06 from '../assets/images/mock06.png';
 import AndroidIcon from '@mui/icons-material/Android';
 import AppleIcon from '@mui/icons-material/Apple';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -12,17 +13,18 @@ import '../assets/styles/Project.scss';
 
 const projects = [
   {
-    title: 'iClair',
-    subtitle: 'Cleaning Management Platform',
+    title: 'LRS – Lead Retrieval System',
+    subtitle: 'Event Management · Lead Generation · Techversant',
     image: mock02,
     role: 'Technical Lead',
     description:
-      'Field service management app for cleaning teams. Features include tenant management, task assignment, offline database sync, image upload with compression, and detailed reporting.',
-    tech: ['Flutter', 'Provider', 'Firebase', 'REST API', 'Image Compression'],
-    highlights: ['Tenant Management', 'Offline Mode', 'Image Upload', 'Reports'],
-    playStore: '#',
-    appStore: '#',
+      'Developed an enterprise Lead Retrieval System (LRS) for exhibitions and trade shows that enables exhibitors to instantly capture qualified leads by scanning attendee QR codes. The platform simplifies lead collection, eliminates manual data entry, and provides exhibitors with real-time access to visitor information for post-event sales and marketing follow-ups.',
+    tech: ['Flutter', 'Flutter Web', 'Java', 'JavaScript', 'PostgreSQL', 'REST APIs', 'RFID', 'QR Code'],
+    highlights: ['Lead Generation', 'QR Code Scanning', 'RFID Integration', 'Exhibition Management', 'Technical Leadership', 'Flutter Web'],
+    playStore: 'https://play.google.com/store/apps/details?id=com.compusystems.lrsattendee&pcampaignid=web_share',
+    appStore: 'https://apps.apple.com/in/app/m3-expo-wallet/id6443723858',
     github: null,
+    privateLabel: 'CompuSystems',
     accent: '#06b6d4',
   },
   {
@@ -41,10 +43,24 @@ const projects = [
     accent: '#f59e0b',
   },
   {
+    title: 'Freight & Warehouse Management Platform',
+    subtitle: 'Logistics · Warehouse Operations · Aamro Freight',
+    image: mock06,
+    role: 'Senior Software Developer',
+    description:
+      'Developed an enterprise logistics and freight management platform designed to streamline warehouse operations, shipment tracking, freight identification, and dispatch management. The solution runs on rugged Android-based POS devices, enabling warehouse operators to scan, verify, and dispatch shipments efficiently through real-time barcode scanning and backend synchronization.',
+    tech: ['Android', 'Kotlin', '.NET', 'Microsoft SQL Server', 'REST APIs', 'POS Device Integration', 'Barcode Scanning'],
+    highlights: ['Freight Management', 'Warehouse Operations', 'POS Device', 'Barcode Scanning', 'Shipment Dispatch', 'Enterprise Logistics'],
+    playStore: null,
+    appStore: null,
+    github: null,
+    accent: '#ec4899',
+  },
+  {
     title: 'Aviation Training & CRM',
     subtitle: 'Aviation · Training · CRM · Aamro Freight',
     image: mock03,
-    role: 'Senior Developer · Mobile Lead',
+    role: 'Senior Software Developer',
     description:
       'Developed an enterprise aviation training and Crew Resource Management (CRM) platform that streamlines flight operations, student training, instructor management, aircraft maintenance tracking, and mandatory pre-flight safety inspections using biometric authorization.',
     tech: ['Android', 'Java', 'MVC', 'REST APIs', 'JWT Authentication', 'Firebase', 'Google APIs', 'ZXing', 'Volley', 'Azure Boards', 'SVN'],
