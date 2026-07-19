@@ -144,7 +144,7 @@ function Contact() {
                     required
                     id="contact-name"
                     label="Your Name"
-                    placeholder="Vishnu Anil"
+                    placeholder="Vishnu M A"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     error={nameError}

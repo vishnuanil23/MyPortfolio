@@ -19,7 +19,7 @@ function Footer() {
       <div className="footer-inner">
         {/* Brand */}
         <div className="footer-brand">
-          <span className="footer-logo">Vishnu Anil</span>
+          <span className="footer-logo">Vishnu M A</span>
           <p className="footer-tagline">
             Technical Lead · Flutter · Android · iOS<br />
             Building mobile experiences that matter.
@@ -55,7 +55,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© {year} Vishnu Anil. Crafted with 💜 using React & TypeScript.</p>
+        <p>© {year} Vishnu M A. Crafted with 💜 using React & TypeScript.</p>
         <button
           className="back-to-top"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

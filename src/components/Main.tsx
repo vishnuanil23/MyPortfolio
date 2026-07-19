@@ -5,6 +5,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import DownloadIcon from '@mui/icons-material/Download';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import '../assets/styles/Main.scss';
+import profileImg from '../assets/images/profile.png';
 
 function Main() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -40,7 +41,7 @@ function Main() {
           <div className="hero-avatar-wrap">
             <div className="hero-avatar">
               <div className="avatar-gradient">
-                <span>VA</span>
+                <img src={profileImg} alt="Vishnu M A" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
               </div>
               <span className="avatar-badge">🚀</span>
             </div>
@@ -56,7 +57,7 @@ function Main() {
 
             <h1 className="hero-title">
               Hi, I'm{' '}
-              <span className="gradient-text">Vishnu Anil</span>
+              <span className="gradient-text">Vishnu M A</span>
             </h1>
 
             <p className="hero-role">

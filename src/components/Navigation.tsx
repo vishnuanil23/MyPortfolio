@@ -77,7 +77,7 @@ function Navigation({ parentToChild, modeChange }: any) {
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
         }}>
-          Vishnu Anil
+          Vishnu M A
         </span>
       </Box>
       <Divider sx={{ borderColor: 'var(--color-border)', margin: '0.5rem 0' }} />
