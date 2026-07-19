@@ -3,21 +3,23 @@ import '../assets/styles/Achievements.scss';
 import { yearsOfExperience } from '../utils/experience';
 
 const achievements = [
-  { value: yearsOfExperience, suffix: '+', label: 'Years of Experience', description: 'Delivering production mobile applications since July 2015' },
-  { value: 12, suffix: '+', label: 'Engineers Led', description: 'In cross-functional development teams' },
-  { value: 15, suffix: '+', label: 'Apps Delivered', description: 'Published to Play Store & App Store' },
-  { value: 4, suffix: '', label: 'Countries Deployed', description: 'Across events, fintech, and government sectors' },
+  { value: yearsOfExperience, suffix: '+', label: 'Years of Experience', description: 'Designing and delivering software solutions since July 2015' },
+  { value: 15, suffix: '+', label: 'Engineers Led & Mentored', description: 'Mentoring developers and guiding engineering teams' },
+  { value: 30, suffix: '+', label: 'Apps Delivered', description: 'End-to-end production software systems deployed' },
+  { value: 8, suffix: '+', label: 'Business Domains', description: 'Fintech, logistics, events, retail, and food ordering' },
 ];
 
 const milestones = [
-  `${yearsOfExperience}+ years of mobile development across Android, iOS, and Flutter (since July 2015)`,
-  'Led teams of 15+ engineers across multiple concurrent projects',
-  'Successfully delivered multiple production apps to Google Play and Apple App Store',
-  'Implemented Clean Architecture in enterprise-grade mobile applications',
-  'Built offline-first mobile solutions with real-time sync capabilities',
-  'Integrated payment gateways, BLE, QR scanning, push notifications, and REST APIs',
-  'Drove native Android to Flutter migration — reducing codebase by ~35%',
-  'Established CI/CD pipelines for automated testing and store deployment',
+  'Led cross-functional engineering teams and managed complex software delivery cycles',
+  'Designed and implemented scalable application architectures across mobile, backend, and databases',
+  'Spearheaded key technical decision-making and migration strategies for legacy platforms',
+  'Delivered secure mobile banking applications for Canara Bank, ESAF, and cooperative banks',
+  'Built warehouse mobility and logistics tracking systems with POS hardware integrations',
+  'Architected barcode registration and AI categorization workflows for GS1 Canada',
+  'Delivered high-performance event management platforms with QR-based lead capture systems',
+  'Designed robust REST APIs and database-driven solutions using .NET, PHP, and SQL databases',
+  'Fostered engineering quality through code reviews, standard guidelines, and CI/CD automation',
+  'Mentored junior and mid-level software engineers to accelerate team performance and growth',
 ];
 
 function useCounter(target: number, duration: number = 2000, active: boolean = false) {
@@ -90,8 +92,8 @@ function Achievements() {
         <div className="section-header reveal">
           <span className="section-label">Achievements</span>
           <h2 className="section-title">
-            Numbers that tell<br />
-            <span className="gradient-text">the story</span>
+            Engineering impact<br />
+            <span className="gradient-text">at a glance</span>
           </h2>
         </div>
 

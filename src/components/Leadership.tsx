@@ -13,58 +13,58 @@ const leadershipCards = [
   {
     icon: <GroupsIcon />,
     color: '#7c3aed',
-    title: 'Team Management',
+    title: 'Engineering Leadership',
     description:
-      'Led and managed cross-functional teams of 15+ developers, designers, and QA engineers. Fostered a culture of ownership, accountability, and continuous improvement.',
+      'Led cross-functional engineering teams across Flutter, Android, iOS, and backend technologies. Fostered ownership, collaboration, quality, and continuous improvement while delivering production-ready software.',
   },
   {
     icon: <SchoolIcon />,
     color: '#06b6d4',
-    title: 'Mentoring Developers',
+    title: 'Technical Mentorship',
     description:
-      'Guided junior and mid-level engineers through technical challenges, career growth, and best practices — from architecture design to clean code principles.',
+      'Mentored developers through architecture discussions, code quality improvements, debugging strategies, design patterns, and career development while encouraging engineering best practices.',
   },
   {
     icon: <RateReviewIcon />,
     color: '#a78bfa',
-    title: 'Code Reviews',
+    title: 'Engineering Quality',
     description:
-      'Established rigorous code review standards to ensure quality, security, and maintainability. Reduced production bugs by enforcing patterns and testing protocols.',
+      'Established engineering standards through code reviews, testing strategies, CI/CD practices, and clean coding principles to improve maintainability and release confidence.',
   },
   {
     icon: <CalendarViewWeekIcon />,
     color: '#f59e0b',
-    title: 'Sprint Planning',
+    title: 'Agile Delivery',
     description:
-      'Facilitated sprint planning, backlog grooming, and retrospectives in Agile/Scrum environments. Ensured timely delivery across multiple parallel projects.',
+      'Led sprint planning, backlog refinement, estimation, retrospectives, and cross-team coordination to ensure predictable and high-quality software delivery.',
   },
   {
     icon: <AccountTreeIcon />,
     color: '#10b981',
-    title: 'Technical Decisions',
+    title: 'Technical Decision Making',
     description:
-      'Drove key architectural decisions — from choosing Clean Architecture with BLoC to migrating legacy Android apps to Flutter — with measurable business impact.',
+      'Guided technology selection, framework adoption, system design discussions, migration strategies, and engineering trade-offs based on long-term maintainability and business needs.',
   },
   {
     icon: <RocketLaunchIcon />,
     color: '#ec4899',
-    title: 'Production Releases',
+    title: 'Product Delivery',
     description:
-      'Owned end-to-end release management including Play Store and App Store deployments, staged rollouts, monitoring, and hotfix response processes.',
+      'Owned end-to-end software delivery—from planning and development to testing, release management, production deployments, monitoring, and post-release support.',
   },
   {
     icon: <RecordVoiceOverIcon />,
     color: '#06b6d4',
-    title: 'Client Communication',
+    title: 'Client & Stakeholder Collaboration',
     description:
-      'Served as the primary technical liaison between engineering teams and clients. Translated business requirements into technical solutions, managing expectations effectively.',
+      'Worked directly with clients, business stakeholders, QA teams, designers, and backend engineers to translate business requirements into scalable software solutions.',
   },
   {
     icon: <AssignmentIcon />,
     color: '#7c3aed',
-    title: 'Requirement Gathering',
+    title: 'Solution Discovery',
     description:
-      'Led discovery sessions with stakeholders to gather, analyze, and document requirements. Created detailed project estimations and technical roadmaps.',
+      'Conducted requirement workshops, effort estimation, technical feasibility analysis, solution planning, and implementation roadmaps before project execution.',
   },
 ];
 
@@ -87,11 +87,20 @@ function Leadership() {
           <span className="section-label">Leadership</span>
           <h2 className="section-title">
             More than just code —<br />
-            <span className="gradient-text">building great teams</span>
+            <span className="gradient-text">Building products, teams & engineering excellence</span>
           </h2>
           <p className="section-subtitle">
-            Technical excellence multiplied by empowering the people around you. That's what leadership means to me.
+            Technical leadership is about enabling people, making sound engineering decisions, and delivering software that creates business value.
           </p>
+        </div>
+
+        {/* Optional Small Badges Above Grid */}
+        <div className="leadership-badges reveal reveal-delay-2">
+          <span>✓ 15+ Engineers Mentored</span>
+          <span>✓ 30+ Applications Delivered</span>
+          <span>✓ 11+ Years Experience</span>
+          <span>✓ Multiple Industry Domains</span>
+          <span>✓ End-to-End Product Delivery</span>
         </div>
 
         <div className="leadership-grid">

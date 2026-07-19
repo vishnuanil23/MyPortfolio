@@ -96,3 +96,66 @@
     padding-bottom: 4rem;
   }
 }
+
+/* Tech Chips in Timeline */
+.timeline-tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.timeline-chip {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem !important;
+  color: var(--color-text-subtle) !important;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 3px 9px;
+  border-radius: 100px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #a78bfa !important;
+    background: rgba(124, 58, 237, 0.08);
+    border-color: rgba(124, 58, 237, 0.2);
+  }
+}
+
+/* View More Button */
+.timeline-more-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  animation: fade-up 0.8s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.btn-more {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.8rem 2.2rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &:hover {
+    background: rgba(124, 58, 237, 0.1);
+    border-color: rgba(124, 58, 237, 0.3);
+    color: var(--color-text);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}

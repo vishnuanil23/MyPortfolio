@@ -14,7 +14,6 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import DownloadIcon from '@mui/icons-material/Download';
 
 const drawerWidth = 280;
 const navItems: [string, string][] = [
@@ -105,26 +104,6 @@ function Navigation({ parentToChild, modeChange }: any) {
           </ListItem>
         ))}
       </List>
-      <Divider sx={{ borderColor: 'var(--color-border)', margin: '0.5rem 0' }} />
-      <Box sx={{ padding: '0.5rem 1rem' }}>
-        <Button
-          startIcon={<DownloadIcon />}
-          onClick={() => window.open('#', '_blank')}
-          fullWidth
-          sx={{
-            background: 'linear-gradient(135deg, #7c3aed, #5b21b6)',
-            color: 'white',
-            borderRadius: '10px',
-            textTransform: 'none',
-            fontFamily: 'Inter',
-            fontWeight: 600,
-            fontSize: '0.85rem',
-            padding: '0.65rem',
-          }}
-        >
-          Download Resume
-        </Button>
-      </Box>
     </Box>
   );
 
@@ -212,30 +191,6 @@ function Navigation({ parentToChild, modeChange }: any) {
             >
               {mode === 'dark' ? <LightModeIcon sx={{ fontSize: 16 }} /> : <DarkModeIcon sx={{ fontSize: 16 }} />}
             </IconButton>
-
-            <Button
-              startIcon={<DownloadIcon sx={{ fontSize: '14px !important' }} />}
-              onClick={() => window.open('#', '_blank')}
-              sx={{
-                display: { xs: 'none', md: 'flex' },
-                background: 'linear-gradient(135deg, #7c3aed, #5b21b6)',
-                color: 'white',
-                borderRadius: '10px',
-                textTransform: 'none',
-                fontFamily: 'Inter',
-                fontWeight: 600,
-                fontSize: '0.82rem',
-                padding: '6px 16px',
-                boxShadow: '0 4px 15px rgba(124,58,237,0.4)',
-                '&:hover': {
-                  background: 'linear-gradient(135deg, #6d28d9, #4c1d95)',
-                  boxShadow: '0 6px 20px rgba(124,58,237,0.5)',
-                  transform: 'translateY(-1px)',
-                },
-              }}
-            >
-              Resume
-            </Button>
           </Box>
         </Toolbar>
       </AppBar>

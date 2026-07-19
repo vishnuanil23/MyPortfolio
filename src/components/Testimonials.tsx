@@ -5,39 +5,30 @@ import '../assets/styles/Testimonials.scss';
 const testimonials = [
   {
     quote:
-      "Vishnu is one of the most technically sharp leads I've worked with. His ability to architect scalable Flutter solutions while keeping the team motivated is truly exceptional. He raised our code quality bar significantly.",
-    name: 'Alex Johnson',
-    title: 'Senior Product Manager',
-    company: 'Tech Corp',
-    avatar: 'AJ',
+      "Vishnu played a key role in delivering several banking and microfinance applications for clients including Canara Bank, ESAF Bank, and multiple Cooperative Banks across Kerala and Karnataka. His ability to understand business requirements, deliver high-quality solutions within demanding timelines, and respond quickly to customer feedback was highly appreciated by both our team and our clients.",
+    name: 'Praveen Krishnan',
+    title: 'Managing Director & CEO',
+    company: 'Safe Software and Integrated Solutions Pvt. Ltd.',
+    avatar: 'PK',
     color: '#7c3aed',
   },
   {
     quote:
-      "As a client, we appreciated how Vishnu consistently translated our business requirements into elegant technical solutions. He communicated proactively, delivered on time, and the app exceeded our expectations.",
-    name: 'Sarah Chen',
-    title: 'Director of Operations',
-    company: 'EventCo International',
-    avatar: 'SC',
+      "One of Vishnu's biggest contributions was successfully integrating POS hardware into our freight and warehouse management platform under a very challenging delivery schedule. Despite the tight timeline, he delivered a stable solution that streamlined warehouse scanning and shipment processing without compromising quality.",
+    name: 'Madhu Menon',
+    title: 'Project Manager',
+    company: 'Aamro Freight and Shipping Services LLC',
+    avatar: 'MM',
     color: '#06b6d4',
   },
   {
     quote:
-      "I had the privilege of being mentored by Vishnu. He doesn't just teach you to code — he teaches you to think like an architect. My growth in the past year under his guidance has been remarkable.",
-    name: 'Rahul Menon',
-    title: 'Flutter Developer',
-    company: 'Techversant',
-    avatar: 'RM',
+      "I've had the opportunity to see Vishnu grow from a strong Android engineer into a dependable Flutter Technical Lead. He successfully led our transition from native Android development to Flutter, built a high-performing mobile engineering team, and consistently delivered enterprise solutions for global organizations such as GS1. His technical leadership, ownership, and ability to guide teams through complex engineering challenges have been invaluable.",
+    name: 'Arun Antony',
+    title: 'Solution Architect',
+    company: 'Techversant Infotech',
+    avatar: 'AA',
     color: '#10b981',
-  },
-  {
-    quote:
-      "Vishnu led our mobile app migration from native Android to Flutter flawlessly. Zero downtime for our users, 35% code reduction, and the team loved the new workflow. A true technical leader.",
-    name: 'David Park',
-    title: 'CTO',
-    company: 'MobileSoft Solutions',
-    avatar: 'DP',
-    color: '#f59e0b',
   },
 ];
 

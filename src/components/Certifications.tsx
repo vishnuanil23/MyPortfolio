@@ -4,40 +4,14 @@ import '../assets/styles/Certifications.scss';
 
 const certifications = [
   {
-    title: 'Flutter Development',
-    issuer: 'Google',
-    date: '2023',
-    description: 'Comprehensive Flutter & Dart development certification covering state management, performance optimization, and app deployment.',
-    color: '#7c3aed',
-    icon: '🐦',
-    badge: 'Google',
-  },
-  {
-    title: 'Android Developer',
-    issuer: 'Google',
-    date: '2021',
-    description: 'Professional Android development certification covering Kotlin, Jetpack Compose, and modern Android architecture patterns.',
-    color: '#10b981',
-    icon: '🤖',
-    badge: 'Google',
-  },
-  {
-    title: 'AWS Cloud Practitioner',
-    issuer: 'Amazon Web Services',
-    date: '2022',
-    description: 'Foundation-level AWS certification demonstrating knowledge of cloud concepts, security, and core AWS services.',
-    color: '#f59e0b',
-    icon: '☁️',
-    badge: 'AWS',
-  },
-  {
-    title: 'Google Associate Cloud Engineer',
-    issuer: 'Google Cloud',
-    date: '2023',
-    description: 'Certification demonstrating ability to deploy applications, monitor operations, and manage enterprise cloud solutions on GCP.',
+    title: 'Google Play Store Listing Certificate',
+    issuer: 'Google Play Academy',
+    date: '19 July 2026',
+    description: 'Successfully completed the Google Play Store Listing certification, demonstrating knowledge of Google Play publishing, store listing optimization, app quality guidelines, discoverability, and Play Console best practices for successfully launching and managing Android applications.',
     color: '#06b6d4',
-    icon: '🌐',
-    badge: 'GCP',
+    icon: '🤖',
+    badge: 'Play Academy',
+    url: '', // Certificate URL placeholder (add link here when available)
   },
 ];
 
@@ -99,7 +73,11 @@ function Certifications() {
                   <span className="cert-dot" style={{ background: cert.color }} />
                   Certified
                 </span>
-                <a href="#" className="cert-view">View Certificate →</a>
+                {cert.url && (
+                  <a href={cert.url} target="_blank" rel="noreferrer" className="cert-view">
+                    View Certificate →
+                  </a>
+                )}
               </div>
             </div>
           ))}

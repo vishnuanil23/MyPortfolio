@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
-import DownloadIcon from '@mui/icons-material/Download';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import '../assets/styles/Main.scss';
 import profileImg from '../assets/images/profile.png';
@@ -61,21 +60,19 @@ function Main() {
             </h1>
 
             <p className="hero-role">
-              Technical Lead · Flutter · Android · iOS
+              Technical Lead
+            </p>
+            <p className="hero-specialties">
+              Software Architecture • Mobile • APIs • Cloud
             </p>
 
             <p className="hero-tagline">
-              I build scalable mobile applications, lead engineering teams, and
-              deliver production-ready solutions — from idea to App Store & Play Store.
+              I architect enterprise platforms, lead high-performing engineering teams, and deliver scalable mobile, backend, and cloud solutions used by thousands of users.
             </p>
 
             {/* CTAs */}
             <div className="hero-ctas">
-              <button className="btn-primary" onClick={() => window.open('#', '_blank')}>
-                <DownloadIcon fontSize="small" />
-                Download Resume
-              </button>
-              <button className="btn-secondary" onClick={() => scrollToSection('projects')}>
+              <button className="btn-primary" onClick={() => scrollToSection('projects')}>
                 View Projects
                 <ArrowForwardIcon fontSize="small" />
               </button>

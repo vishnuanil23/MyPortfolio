@@ -21,8 +21,8 @@ function Footer() {
         <div className="footer-brand">
           <span className="footer-logo">Vishnu M A</span>
           <p className="footer-tagline">
-            Technical Lead · Flutter · Android · iOS<br />
-            Building mobile experiences that matter.
+            Technical Lead · Mobile · Backend · Architecture · Cloud<br />
+            Architecting software systems that scale.
           </p>
           <div className="footer-socials">
             <a href="https://github.com/vishnuanil23" target="_blank" rel="noreferrer" aria-label="GitHub">

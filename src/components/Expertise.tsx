@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMobileAlt, faCode, faCubes, faTools, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faMobileAlt, faCode, faCubes, faUsers, faDatabase } from '@fortawesome/free-solid-svg-icons';
 import '../assets/styles/Expertise.scss';
 
 const skillGroups = [
@@ -8,31 +8,31 @@ const skillGroups = [
     icon: faMobileAlt,
     title: 'Mobile',
     color: '#7c3aed',
-    skills: ['Flutter', 'Android', 'iOS', 'React Native'],
+    skills: ['Flutter', 'Android', 'iOS', 'Dart', 'Kotlin', 'Swift'],
   },
   {
     icon: faCode,
-    title: 'Languages',
+    title: 'Backend',
     color: '#06b6d4',
-    skills: ['Dart', 'Swift', 'Kotlin', 'Java', 'Objective-C'],
+    skills: ['.NET', 'ASP.NET Core', 'Laravel', 'PHP','REST APIs'],
+  },
+  {
+    icon: faDatabase,
+    title: 'Database',
+    color: '#38bdf8',
+    skills: ['PostgreSQL', 'SQL Server', 'MySQL'],
   },
   {
     icon: faCubes,
-    title: 'Architecture',
+    title: 'Engineering',
     color: '#a78bfa',
-    skills: ['MVVM', 'Clean Architecture', 'BLoC', 'Provider', 'Riverpod', 'REST APIs'],
-  },
-  {
-    icon: faTools,
-    title: 'Tools',
-    color: '#f59e0b',
-    skills: ['Git', 'GitHub', 'Jira', 'Firebase', 'Postman', 'Android Studio', 'Xcode', 'VS Code'],
+    skills: ['Clean Architecture', 'MVVM', 'CI/CD', 'Performance Optimization', 'Jenkins', 'Jira'],
   },
   {
     icon: faUsers,
     title: 'Leadership',
     color: '#10b981',
-    skills: ['Agile', 'Sprint Planning', 'Mentoring', 'Code Reviews', 'Requirement Analysis', 'Stakeholder Communication', 'Project Estimation'],
+    skills: ['Team Leadership', 'Mentoring', 'Release Management', 'Agile Methodologies'],
   },
 ];
 
@@ -58,7 +58,7 @@ function Expertise() {
             <span className="gradient-text">tools I master</span>
           </h2>
           <p className="section-subtitle">
-            Five years deep into mobile, eight years strong — here's the stack I use every day.
+            Specializing in end-to-end mobile architectures, robust backend systems, and scalable cloud deployments.
           </p>
         </div>
 

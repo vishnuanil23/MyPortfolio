@@ -181,12 +181,20 @@
 }
 
 .hero-role {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+  animation: fade-up 0.8s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-specialties {
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
   font-weight: 500;
   color: var(--color-text-muted);
   font-family: 'Fira Code', monospace;
   margin-bottom: 1.5rem;
-  animation: fade-up 0.8s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: fade-up 0.8s 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
 
   &::before {
     content: '> ';

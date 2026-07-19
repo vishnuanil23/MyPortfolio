@@ -1,71 +1,114 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import '../assets/styles/Timeline.scss';
-import { yearsOfExperience } from '../utils/experience';
 
 const experiences = [
   {
     title: 'Technical Lead',
     company: 'Techversant',
-    location: 'Kochi, India',
-    date: '2022 — Present',
+    location: 'Thiruvananthapuram, Kerala',
+    date: 'July 2023 – Present',
     type: 'current',
     responsibilities: [
-      'Led a cross-functional team of 15+ developers across multiple projects',
-      'Drove architectural decisions including Flutter migration from native Android',
-      'Conducted sprint planning, code reviews, and technical interviews',
-      'Managed client discussions, requirement gathering, and stakeholder communication',
-      'Oversaw release management for Play Store and App Store deployments',
-      'Mentored junior and mid-level engineers, improving team code quality by 40%',
+      'Led cross-functional engineering teams delivering enterprise software across Mobile, Backend, APIs, and Cloud.',
+      'Built workforce management solutions supporting Amazon operations and workforce automation.',
+      'Developed AI-powered product management applications for GS1 Canada, enabling barcode registration, product categorization, and approval workflows.',
+      'Delivered event management and exhibition platforms featuring QR-based lead generation, attendee engagement, exhibitor management, and offline capabilities.',
+      'Built cloud kitchen food ordering applications for UAE businesses with scalable backend integrations.'
     ],
+    tech: ['Flutter', 'Android', 'iOS', '.NET', 'ASP.NET Core', 'REST APIs', 'PostgreSQL', 'SQL Server', 'SQLite', 'Laravel', 'PHP', 'Firebase', 'Git', 'GitHub', 'CI/CD', 'Azure DevOps', 'Clean Architecture', 'MVVM', 'Team Leadership']
   },
   {
-    title: 'Associate Lead',
+    title: 'Technical Consultant',
     company: 'Techversant',
-    location: 'Kochi, India',
-    date: '2020 — 2022',
+    location: 'Thiruvananthapuram, Kerala',
+    date: 'Aug 2022 – Sep 2023',
     type: 'past',
     responsibilities: [
-      'Assisted in team management and sprint planning activities',
-      'Led the implementation of Clean Architecture across Flutter projects',
-      'Coordinated with QA and design teams for seamless delivery',
-      'Developed core modules for enterprise mobile applications',
+      'Designed and implemented enterprise application modules across Flutter, Android, and iOS platforms.',
+      'Collaborated with multiple engineering teams to improve application architecture, performance, and maintainability.',
+      'Assisted backend integration, API design discussions, debugging, and production support.',
+      'Mentored developers and contributed to engineering best practices.'
     ],
+    tech: ['Flutter', 'Android', 'iOS', 'REST APIs', 'Firebase', 'Clean Architecture', 'MVVM', 'Git']
   },
   {
-    title: 'Senior Software Engineer',
-    company: 'Techversant',
-    location: 'Kochi, India',
-    date: '2018 — 2020',
+    title: 'Senior Mobile Engineer',
+    company: 'Aamro Freight & Shipping Services LLC',
+    location: 'Dubai, UAE',
+    date: 'Nov 2020 – Aug 2022',
     type: 'past',
     responsibilities: [
-      'Built high-performance Flutter and Android applications',
-      'Integrated complex third-party APIs including payment gateways and BLE',
-      'Implemented offline-first architecture with local database sync',
-      'Conducted code reviews and participated in architectural planning',
+      'Developed logistics and freight management applications for warehouse operations.',
+      'Integrated POS scanning devices for shipment identification, tracking, and dispatch workflows.',
+      'Built warehouse mobility solutions supporting freight movement and operational efficiency.',
+      'Worked closely with backend teams on API integrations and production deployments.'
     ],
+    tech: ['Xamarin', 'Android', 'iOS', 'REST APIs', 'SQLite', 'Java', 'Kotlin', 'Git', 'Firebase']
   },
   {
-    title: 'Software Engineer',
-    company: 'Techversant',
-    location: 'Kochi, India',
-    date: '2016 — 2018',
+    title: 'Mobile Engineer',
+    company: 'Holiday Souq Travel LLC',
+    location: 'Dubai, UAE',
+    date: 'Mar 2019 – Nov 2020',
     type: 'past',
     responsibilities: [
-      'Developed Android applications using Java and Kotlin',
-      'Built REST API integrations and data models',
-      'Worked with senior engineers to implement features and fix bugs',
-      'Participated in agile ceremonies and sprint cycles',
+      'Developed travel and tourism applications for UAE customers.',
+      'Built food ordering applications for in-house restaurants and hospitality businesses.',
+      'Integrated booking workflows, backend APIs, and customer engagement features.',
+      'Improved application performance and user experience across multiple products.'
     ],
+    tech: ['Android', 'Java', 'Kotlin', 'REST APIs','PHP', 'SQLite', 'MVC', 'Git']
   },
+  {
+    title: 'Team Lead',
+    company: 'Safe Software & Integrated Solutions',
+    location: 'Kozhikode, Kerala',
+    date: 'Dec 2018 – Feb 2019',
+    type: 'past',
+    responsibilities: [
+      'Led mobile development projects for banking and enterprise clients.',
+      'Coordinated engineering teams, code reviews, sprint planning, and client communication.',
+      'Ensured successful project delivery across multiple banking applications.'
+    ],
+    tech: ['Android', 'Java', 'SQLite', 'REST APIs', 'Leadership', 'Git', 'Agile']
+  },
+  {
+    title: 'Mobile Engineer',
+    company: 'Safe Software & Integrated Solutions',
+    location: 'Kozhikode, Kerala',
+    date: 'Jul 2015 – Dec 2018',
+    type: 'past',
+    responsibilities: [
+      'Developed end-to-end mobile banking applications for Canara Bank, ESAF Bank, and multiple Cooperative Banks across Kerala and Karnataka.',
+      'Built secure banking modules including authentication, account services, and financial workflows.',
+      'Worked directly with banking clients throughout development, testing, deployment, and maintenance.',
+      'Implemented MVVM architecture and backend API integrations for enterprise banking solutions.'
+    ],
+    tech: ['Android', 'Java','SQLite', 'REST APIs', 'MVVM', 'Git', 'JSON']
+  },
+  {
+    title: 'Android Intern',
+    company: 'Cerebtec Labs',
+    location: 'Kochi, Kerala',
+    date: 'Sep 2014 – May 2015',
+    type: 'past',
+    responsibilities: [
+      'Learned Android application development through live client projects.',
+      'Built reusable UI components and integrated REST APIs.',
+      'Gained practical experience with software development lifecycle and version control.'
+    ],
+    tech: ['Android', 'Java', 'SQLite', 'REST APIs']
+  }
 ];
 
 function Timeline() {
   const ref = useRef<HTMLDivElement>(null);
+  const [showAll, setShowAll] = useState<boolean>(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -76,22 +119,24 @@ function Timeline() {
     return () => observer.disconnect();
   }, []);
 
+  const visibleExperiences = showAll ? experiences : experiences.slice(0, 3);
+
   return (
     <div id="history" ref={ref}>
       <div className="timeline-section">
         <div className="section-header reveal" style={{ padding: '0 10%' }}>
           <span className="section-label">Experience</span>
           <h2 className="section-title">
-            Career Journey at<br />
-            <span className="gradient-text">Techversant</span>
+            Engineering<br />
+            <span className="gradient-text">Journey</span>
           </h2>
           <p className="section-subtitle">
-            {yearsOfExperience}+ years of growth from engineer to technical leader, building impactful mobile solutions.
+            11+ years of building software solutions across mobile, backend, APIs, databases, and cloud technologies while growing from Android Developer to Technical Lead.
           </p>
         </div>
 
         <VerticalTimeline lineColor="rgba(124, 58, 237, 0.2)">
-          {experiences.map((exp, i) => (
+          {visibleExperiences.map((exp, i) => (
             <VerticalTimelineElement
               key={i}
               className={`vertical-timeline-element--work ${exp.type === 'current' ? 'vt-current' : ''}`}
@@ -122,7 +167,7 @@ function Timeline() {
               icon={<FontAwesomeIcon icon={faBriefcase} />}
             >
               {exp.type === 'current' && (
-                <span className="timeline-badge">Current</span>
+                <span className="timeline-badge">Current Role</span>
               )}
               <h3 className="timeline-title">{exp.title}</h3>
               <h4 className="timeline-company">
@@ -134,9 +179,23 @@ function Timeline() {
                   <li key={j}>{r}</li>
                 ))}
               </ul>
+
+              {/* Rounded tech chips */}
+              <div className="timeline-tech-chips">
+                {exp.tech.map((t, j) => (
+                  <span className="timeline-chip" key={j}>{t}</span>
+                ))}
+              </div>
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>
+
+        {/* View More / Less toggle button */}
+        <div className="timeline-more-btn-container reveal">
+          <button className="btn-more" onClick={() => setShowAll(!showAll)}>
+            {showAll ? 'Show Less Experience ↑' : 'View More Experience ↓'}
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -3,10 +3,12 @@ import '../assets/styles/About.scss';
 import { yearsOfExperience } from '../utils/experience';
 
 const skills = [
-  'Flutter', 'Android', 'iOS', 'React Native',
-  'Team Leadership', 'Architecture', 'Code Review',
-  'Agile', 'CI/CD', 'Dart', 'Swift', 'Kotlin',
-  'Clean Architecture', 'BLoC', 'Firebase',
+  'Flutter', '.NET', 'Android', 'iOS',
+  'REST APIs', 'SQL', 'PostgreSQL',
+  'Clean Architecture', 'MVVM', 'CI/CD',
+  'AWS', 'Technical Leadership',
+  'Release Management', 'Performance Optimization',
+  'System Design'
 ];
 
 function About() {
@@ -38,54 +40,58 @@ function About() {
           <div className="about-text">
             <span className="section-label reveal">About Me</span>
             <h2 className="section-title reveal reveal-delay-1">
-              Building the future,<br />
-              <span className="gradient-text">one app at a time</span>
+              Engineering software<br />
+              <span className="gradient-text">that scales</span>
             </h2>
-            <p className="about-description reveal reveal-delay-2">
-              I am a <strong>Technical Lead</strong> with <strong>{yearsOfExperience}+ years of experience</strong> building
-              high-quality mobile applications using Flutter, Android, and iOS technologies.
-              I have successfully led cross-functional teams, designed scalable architectures,
-              conducted code reviews, mentored developers, and delivered enterprise-grade
-              applications across multiple domains.
+            <p className="about-description reveal reveal-delay-2" style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
+              Technical Lead with <strong>{yearsOfExperience}+ years of experience</strong> designing and delivering enterprise software solutions across mobile, backend, APIs, and cloud platforms. Experienced in leading cross-functional engineering teams, designing scalable applications, and building reliable systems using Flutter, .NET, Android, iOS, REST APIs, SQL databases, and modern engineering practices.
             </p>
-            <p className="about-description reveal reveal-delay-3">
-              From event management platforms and cleaning solutions to government-grade
-              identity verification systems — I bring the same level of precision, performance,
-              and polish to every project I touch.
-            </p>
+            <ul className="about-bullets reveal reveal-delay-3">
+              <li>Delivered enterprise software across multiple industries</li>
+              <li>Designed scalable backend APIs & business services</li>
+              <li>Led engineering teams from concept to production</li>
+              <li>Built end-to-end software solutions with long-term maintainability</li>
+            </ul>
 
-            {/* Stats row */}
-            <div className="about-stats reveal reveal-delay-4">
-              <div className="stat-item">
-                <span className="stat-number gradient-text">{yearsOfExperience}+</span>
-                <span className="stat-label">Years Experience</span>
-              </div>
-              <div className="stat-divider" />
-              <div className="stat-item">
-                <span className="stat-number gradient-text">15+</span>
-                <span className="stat-label">Engineers Led</span>
-              </div>
-              <div className="stat-divider" />
-              <div className="stat-item">
-                <span className="stat-number gradient-text">30+</span>
-                <span className="stat-label">Apps Delivered</span>
-              </div>
-            </div>
+            {/* Left column now just has Text + Bullets */}
           </div>
 
-          {/* Right: Skills cloud */}
-          <div className="about-skills reveal reveal-delay-2">
-            <div className="skills-cloud-label">Core Technologies</div>
-            <div className="skills-cloud">
-              {skills.map((skill, i) => (
-                <span
-                  key={i}
-                  className="skill-tag"
-                  style={{ animationDelay: `${i * 0.05}s` }}
-                >
-                  {skill}
-                </span>
-              ))}
+          {/* Right Column: Stats Grid + Core Technologies */}
+          <div className="about-right reveal reveal-delay-2">
+            {/* Quick Stats Grid */}
+            <div className="about-stats-grid">
+              <div className="about-stat-box glass-card">
+                <span className="stat-num gradient-text">{yearsOfExperience}+</span>
+                <span className="stat-lbl">Years Experience</span>
+              </div>
+              <div className="about-stat-box glass-card">
+                <span className="stat-num gradient-text">30+</span>
+                <span className="stat-lbl">Apps Delivered</span>
+              </div>
+              <div className="about-stat-box glass-card">
+                <span className="stat-num gradient-text">15+</span>
+                <span className="stat-lbl">Team Size (Engineers)</span>
+              </div>
+              <div className="about-stat-box glass-card">
+                <span className="stat-num gradient-text">8+</span>
+                <span className="stat-lbl">Industry Domains</span>
+              </div>
+            </div>
+
+            {/* Core Technologies */}
+            <div className="about-skills-new">
+              <div className="skills-cloud-label">Core Technologies</div>
+              <div className="skills-cloud">
+                {skills.map((skill, i) => (
+                  <span
+                    key={i}
+                    className="skill-tag"
+                    style={{ animationDelay: `${i * 0.05}s` }}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
